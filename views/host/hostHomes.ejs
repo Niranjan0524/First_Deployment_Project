@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All host homes</title>
+  
+
+  <link rel="stylesheet" href="/styles/output.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+   <%- include('../partials/nav') %>
+
+<section class="container mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-4 text-center">Your Homes</h1>
+
+    
+  </section>
+
+  <!-- Card Section -->
+  <section class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Card 1 -->
+    <% houseList.forEach(function(home)  { %>
+      
+
+      <div class="bg-white rounded-lg shadow-md overflow-hidden w-full sm:w-72">
+        <img src="<%= home.PhotoURL %>" alt="view" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <div class="mt-1">
+           
+          </div>
+          <h2 class="text-lg font-semibold"><%= home.houseName %></h2>
+          <div class="text-sm text-gray-600"><%= home.location %></div>
+          <div class="flex justify-between items-center mt-2">
+            <span class="font-semibold text-lg"><%= home.price %></span>
+            <span class="text-sm text-yellow-500">⭐ <%= home.rating %></span>
+          </div>
+          <form action="/host/deleteHome/<%=home._id%>" method="POST">
+
+          <button class="mt-4 bg-red-500 text-white py-2 px-2 rounded hover:bg-pink-600">Delete Home</button>
+
+          </form>
+
+          <a href="homes/editHome/<%= home._id %>?editing=true">
+          <button class="mt-4 bg-yellow-500 text-white py-2 px-4 rounded hover:bg-blue-600">Edit Details</button>
+          </a>
+        </div>
+      </div>
+    
+    <% }); %>
+  </section>
+
+</body>
+</html>

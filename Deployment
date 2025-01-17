@@ -1,0 +1,66 @@
+1]
+Environment Variables:
+Environment variables are used to store configuration settings and sensitive information such as API keys, database credentials, and other secrets. They help keep your application secure and make it easier to manage different configurations for different environments (development, staging, production).
+
+
+
+2]
+-create .env(in root) file to store the sensitive information.
+-add variables in that file.
+-npm install dotenv.
+-import this in first line of app.js
+-require("dotenv").config();
+
+
+3]
+for testing or for the track create the .env.example for the reference. 
+
+- you can create one or more .env files
+like = .env.development
+      =.env.example
+      =.env.production
+
+-how to load them?
+=>const ENV=process.env.NODE_ENV;
+
+
+4]
+To go in production we have to set env in scripts in package.json
+
+i.e : dev:"set NODE_ENV=production && {any other}"
+
+
+5]
+Secure Response Headers:
+i.npm install helmet
+ii. import helmet
+iii. const helmet=require("helmet");
+iv. app.use(helmet());
+
+which returns middleware which helps in security . will also save some attacks.
+
+
+6]Compression:
+Compression is used to reduce the size of the response body, which can significantly improve the performance of your web application by decreasing the amount of data that needs to be transferred between the server and the client. This results in faster load times and reduced bandwidth usage.
+
+i. npm install compression
+ii. const compression=require("compression");
+iii. app.use(compression());
+
+
+
+7]Morgan:
+Morgan is an HTTP request logger middleware for Node.js. It is used to log details about incoming HTTP requests to your application. This can be extremely useful for debugging, monitoring, and analyzing the performance of your application.
+
+i.npm install morgan
+ii. const morgan...
+iii. set the path where to log the details:
+    const accessLogStream=fs.createWriteStream(path.join(rootDir,"access.log"),{flags:"a"});
+
+    here flags:'a' means asking access.
+
+
+
+8]SSL/TSL Encryption:
+basically we dont need to set this up ebcause this is set by cloud provider.
+

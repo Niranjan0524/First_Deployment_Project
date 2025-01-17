@@ -1,0 +1,12 @@
+
+<%if (userType==="normal") {%>
+  <form action="/favourites" method="POST">
+  <input type="hidden" name="homeId"  value="<%=home._id%>" >
+<button class="text-red-400 hover:text-red-1000 font-bold">
+  Add to favourites
+</button>
+</form>
+
+<%} %>
+
+

@@ -1,0 +1,42 @@
+<header class="bg-white shadow-md py-4 px-6 flex items-center justify-between">
+  <div class="text-green-600 text-xl font-bold mr-4"><a href="/">airbnb</a></div>
+  <div>
+    <a href="/homes">
+      <button class="bg-red-600 text-white rounded-full px-4 py-2 mr-2">
+        Homes
+      </button>
+    </a>
+    </div>
+    <% if(isLoggedIn && user.userType==='host') {%>
+    <div>
+    <a href="/host/addhome">
+      <button class="bg-red-600 text-white rounded-full px-4 py-2 mr-2">
+        Add Home
+      </button>
+    </a>
+  </div>
+  <%}%>
+  <div class="flex items-center gap-2">
+    <input type="text" placeholder="Search destinations" class="border rounded-full px-4 py-2 w-56 ">
+    <button class="bg-pink-600 text-white rounded-full px-4 py-2">
+      Search
+    </button>
+  </div>
+   
+  <div class="flex items-center gap-4">
+    <% if(isLoggedIn && user.userType==='host') {%>
+    <a href="/host/homes">
+      <button class="bg-pink-600 text-white rounded-full px-4 py-2">
+      Host Homes
+      </button>
+    </a>
+    <%}%>
+
+    <a href="<%= isLoggedIn ? '/logout' : '/login' %>">
+      <button class="bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700 transition duration-300">
+        <%=isLoggedIn ?"Logout":"Login"%>
+      </button>
+    </a>
+    <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">👤</div>
+  </div>
+</header>

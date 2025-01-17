@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Booking UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+
+
+  <ul>
+    <% if (home && typeof home === 'object') { %>
+      <% Object.keys(home).forEach(function(key) { %>
+      <li><%= key %>: <%= home[key] %></li>
+      <% }); %>
+    <% } else { %>
+      <li>No details available</li>
+    <% } %>
+  </ul>
+  
+  <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="p-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Quinta Da Santana Luxury Villa : In-house kitchen</h1>
+      <div>
+       <%- include('../partials/favourites', {home: home}) %>
+      </div>
+   
+    </div>
+    
+    <div class="grid grid-cols-2 gap-4 p-6">
+      <div class="col-span-2">
+        <img src="image.png" alt="Villa Image" class="w-full h-auto rounded-lg shadow-md">
+      </div>
+      
+      <div>
+        <img src="<%=home.photo%>" alt="Small Villa Image" class="w-full h-auto rounded-lg shadow-md">
+      </div>
+      <div>
+        <img src="<%=home.photo%>" alt="Small Villa Image" class="w-full h-auto rounded-lg shadow-md">
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/300" alt="Small Villa Image" class="w-full h-auto rounded-lg shadow-md">
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/300" alt="Small Villa Image" class="w-full h-auto rounded-lg shadow-md">
+      </div>
+  
+
+    <div class="px-6 pb-6 w-[600px]  flex justify-between">
+      <div class="flex  px-items-center justify-between w-full">
+        <div>
+          <p class="text-gray-700 text-sm">Entire villa in Raia, India</p>
+          <p class="text-gray-500 text-sm">2 guests · 1 bedroom · 1 bed · 1 bathroom</p>
+          <p class="text-yellow-500 text-sm mt-2 flex items-center">
+            <span class="font-bold">4.91</span>
+            <span class="ml-2">· 98 reviews</span>
+          </p>
+        </div>
+        <div class="ml-auto text-right">
+          <p class="text-gray-800 font-bold text-xl">₹4,860<span class="text-sm text-gray-600"> / night</span></p>
+          <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            Reserve
+          </button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="mt-4">
+        <a href="/rules/<%=home._id%>" download class="text-red-500 hover:underline">
+          House rules
+        </a>
+      </div>
+  </div>
+       
+
+  <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <!-- Title and Rating -->
+    <div class="mb-4">
+      <h1 class="text-2xl font-semibold">Entire villa in Raia, India</h1>
+      <p class="text-gray-500">2 guests · 1 bedroom · 1 bed · 1 bathroom</p>
+      <div class="flex items-center mt-2">
+        <span class="text-yellow-500 font-semibold">4.91</span>
+        <span class="text-gray-500 ml-1">· 98 reviews</span>
+      </div>
+    </div>
+
+    <!-- Host Details -->
+    <div class="flex items-center space-x-4 border-b pb-4">
+      <img src="https://via.placeholder.com/50" alt="Host" class="rounded-full">
+      <div>
+        <h2 class="font-semibold">Hosted by Cristovao</h2>
+        <p class="text-gray-500">Superhost · 8 years hosting</p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 border-b pb-4">
+      <div class="flex items-center space-x-2">
+        <div class="p-3 bg-gray-100 rounded-full">
+          <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold">Designed for staying cool</p>
+          <p class="text-gray-500 text-sm">Beat the heat with the A/C and ceiling fan.</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="p-3 bg-gray-100 rounded-full">
+          <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.382V6a2 2 0 012-2h14a2 2 0 012 2v9.382a2 2 0 01-1.553 1.894L15 20"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold">Amazing outdoor space</p>
+          <p class="text-gray-500 text-sm">Guests mention the pool, garden, and patio as highlights.</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="p-3 bg-gray-100 rounded-full">
+          <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16V8m8 8V8"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="font-semibold">Free cancellation before 8 Jan</p>
+          <p class="text-gray-500 text-sm">Get a full refund if you change your mind.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Section -->
+    <div class="mt-6">
+      <div class="p-4 border rounded-lg shadow-lg">
+        <div class="flex justify-between items-center">
+          <p class="text-xl font-semibold">₹4,860 <span class="text-sm font-normal">night</span></p>
+        </div>
+        <div class="mt-4">
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-gray-500 text-sm">Check-in</label>
+              <input type="date" class="w-full border rounded-md p-2">
+            </div>
+            <div>
+              <label class="block text-gray-500 text-sm">Checkout</label>
+              <input type="date" class="w-full border rounded-md p-2">
+            </div>
+          </div>
+          <div class="mt-2">
+            <label class="block text-gray-500 text-sm">Guests</label>
+            <select class="w-full border rounded-md p-2">
+              <option>1 guest</option>
+              <option>2 guests</option>
+            </select>
+          </div>
+        </div>
+        <button class="w-full mt-4 bg-pink-500 text-white py-2 rounded-lg">Reserve</button>
+        <p class="text-gray-500 text-sm mt-2 text-center">You won't be charged yet</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
