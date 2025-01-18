@@ -64,3 +64,12 @@ iii. set the path where to log the details:
 8]SSL/TSL Encryption:
 basically we dont need to set this up ebcause this is set by cloud provider.
 
+
+
+9]
+basically we will host in 2 servers 
+i.frontend 
+ii.backend
+iii.mongo delpoyment is already in built
+
+
