@@ -109,7 +109,6 @@ app.use((req, res, next) => {
   if (req.get("cookie")) {
     req.isLoggedIn = req.get("Cookie").split("=")[1] === "true";
   }
-
   next();
 });
 
